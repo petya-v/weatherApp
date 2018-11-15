@@ -1,5 +1,12 @@
-.pff {
-  border: 3px;
-  border-radius: 6px;
-  padding: 10px;
+@import "../../../../styles";
+
+
+span {
+  color: white;
 }
+
+.border {
+  border-width:2px;
+  border-radius:5px;
+}
+
