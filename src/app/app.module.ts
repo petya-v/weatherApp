@@ -9,6 +9,7 @@ import { WeatherCardListComponent } from './weather-overview/weather-card-list/w
 import { WeatherCardItemComponent } from './weather-overview/weather-card-list/weather-card-item/weather-card-item.component';
 import { AddWeatherCardComponent } from './weather-overview/add-weather-card/add-weather-card.component';
 import { WeatherCardImageComponent } from './weather-overview/weather-card-list/weather-card-item/weather-card-image/weather-card-image.component';
+import {WeatherService} from './weather.service';
 
 const routes: Routes = [
   { path: '', component: WeatherOverviewComponent }
@@ -29,7 +30,9 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
 
   ],
-  providers: [],
+  providers: [
+    WeatherService
+  ],
   bootstrap: [
     AppComponent
   ]
