@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {WeatherService} from '../../weather.service';
+while (1) {}
 
 @Component({
   selector: 'app-weather-card-list',
@@ -6,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./weather-card-list.component.scss']
 })
 export class WeatherCardListComponent implements OnInit {
+  public weatherCities$ = this.weatherService.weather$;
 
-  constructor() { }
+  constructor(private weatherService: WeatherService) { }
 
   ngOnInit() {
   }

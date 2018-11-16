@@ -1,9 +1,9 @@
-<div class="card border">
+<div class="card border" >
   <div class="card-body">
     <div class="row">
       <div class="col">
-        <span>14 </span>
-        <span>Nov</span>
+        <span>{{ currentDate | date:'d'}} </span>
+        <span>{{ currentDate | date:'MMM'}}</span>
       </div>
       <div class="col"></div>
       <div class="col"></div>
@@ -18,23 +18,24 @@
     <div class="row">
       <div class="col"></div>
       <div class="col">
-        <span><h5 class="card-title text-center">London, UK</h5></span>
+        <span><h5 class="card-title text-center">{{weatherItem?.name}}</h5></span>
       </div>
       <div class="col"></div>
     </div>
     <div class="row pt-3">
       <div class="col text-center">
         <span class="fas fa-wind"></span>
-        <span>  2MPH</span>
+        <span>  {{weatherItem?.wind.speed}}</span>
       </div>
       <div class="col text-center">
         <span class="fas fa-tint"></span>
-        <span>  2%</span>
+        <span>  {{weatherItem?.main.humidity}}</span>
       </div>
       <div class="col text-center">
         <span class="fas fa-temperature-low"></span>
-        <span>  13.0°</span>
+        <span>  {{weatherItem?.main.temp}}</span>
       </div>
     </div>
   </div>
 </div>
+<app-weather-card-item></app-weather-card-item>
