@@ -11,7 +11,7 @@ export class AddWeatherCardComponent implements OnInit {
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit() {
-    this.weatherService.findByName('Sofia').subscribe();
+    this.weatherService.find('Sofia').subscribe();
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {WeatherService} from '../../weather.service';
-while (1) {}
+
 
 @Component({
   selector: 'app-weather-card-list',
