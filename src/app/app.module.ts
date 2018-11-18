@@ -11,6 +11,7 @@ import { AddWeatherCardComponent } from './weather-overview/add-weather-card/add
 import { WeatherCardImageComponent } from './weather-overview/weather-card-list/weather-card-item/weather-card-image/weather-card-image.component';
 import {WeatherService} from './weather.service';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 const routes: Routes = [
   { path: '', component: WeatherOverviewComponent }
@@ -29,13 +30,19 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     WeatherService
   ],
   bootstrap: [
     AppComponent
+  ],
+  exports: [
+  ],
+  entryComponents: [
+    WeatherCardItemComponent
   ]
 })
 export class AppModule { }

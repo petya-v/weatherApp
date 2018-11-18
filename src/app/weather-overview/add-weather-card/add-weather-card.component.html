@@ -1,3 +1,13 @@
-<span>
-  add-weather-card works!
-</span>
+<div class="card border" >
+  <div class="card-body">
+    <div class="row"><div class="col"></div></div>
+    <div class="row">
+      <input class="form-control-sm" type="text" placeholder="City" [(ngModel)]="city">
+    </div>
+    <div class="row">
+      <div class="col">
+        <button (click)="onAddCity()"><span class="fas fa-plus-circle"></span></button>
+      </div>
+    </div>
+  </div>
+</div>

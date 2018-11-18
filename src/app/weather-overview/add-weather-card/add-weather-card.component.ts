@@ -7,11 +7,15 @@ import {WeatherService} from '../../weather.service';
   styleUrls: ['./add-weather-card.component.scss']
 })
 export class AddWeatherCardComponent implements OnInit {
+  public city: string;
 
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit() {
-    this.weatherService.find('Sofia').subscribe();
+  }
+
+  onAddCity() {
+    this.weatherService.find(this.city).subscribe();
   }
 
 }
