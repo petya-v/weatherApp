@@ -1,4 +1,4 @@
-<div class="icon sun-shower" >
+<div class="icon sun-shower" *ngIf="weather == 'Sun-shower'">
   <div class="cloud"></div>
   <div class="sun">
     <div class="rays"></div>
@@ -6,3 +6,34 @@
   <div class="rain"></div>
 </div>
 
+<div class="icon thunder-storm" *ngIf="weather == 'Storm'">
+  <div class="cloud"></div>
+  <div class="lightning">
+    <div class="bolt"></div>
+    <div class="bolt"></div>
+  </div>
+</div>
+
+<div class="icon cloudy" *ngIf="weather == 'Clouds'">
+  <div class="cloud"></div>
+  <div class="cloud"></div>
+</div>
+
+<div class="icon flurries" *ngIf="weather == 'Snow'">
+  <div class="cloud"></div>
+  <div class="snow">
+    <div class="flake"></div>
+    <div class="flake"></div>
+  </div>
+</div>
+
+<div class="icon sunny" *ngIf="weather == 'Sun'">
+  <div class="sun">
+    <div class="rays"></div>
+  </div>
+</div>
+
+<div class="icon rainy" *ngIf="weather == 'Rain'">
+  <div class="cloud"></div>
+  <div class="rain"></div>
+</div>
