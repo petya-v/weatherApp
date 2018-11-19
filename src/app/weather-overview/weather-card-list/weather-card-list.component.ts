@@ -1,6 +1,6 @@
-import {Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {WeatherService} from '../../weather.service';
-import {WeatherCardItemComponent} from './weather-card-item/weather-card-item.component';
+import {WeatherItem} from '../../models/weather-item';
 
 
 @Component({
@@ -9,18 +9,18 @@ import {WeatherCardItemComponent} from './weather-card-item/weather-card-item.co
   styleUrls: ['./weather-card-list.component.scss']
 })
 export class WeatherCardListComponent implements OnInit {
-  public weatherCities$ = this.weatherService.weather$;
+  private weatherList: Array<WeatherItem> = [];
 
-  @ViewChild('listContainer', { read: ViewContainerRef }) entry: ViewContainerRef;
-  constructor(private weatherService: WeatherService,
-              private resolver: ComponentFactoryResolver) { }
+  constructor(private weatherService: WeatherService) { }
 
   ngOnInit() {
-    const factory = this.resolver.resolveComponentFactory(WeatherCardItemComponent);
-    this.weatherCities$.subscribe(weather => {
-      let componentRef: any;
-      componentRef = this.entry.createComponent(factory);
-      componentRef.instance.weatherItem = weather;
+  }
+
+  onWeatherItemAdded(cityName: string) {
+    const weatherList: Array<WeatherItem> = [];
+    this.weatherService.find(cityName).subscribe(weatherItem => {
+      weatherList.push(weatherItem);
+      this.weatherList = [...weatherList];
     });
   }
 }

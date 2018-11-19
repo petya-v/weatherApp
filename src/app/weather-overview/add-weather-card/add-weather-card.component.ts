@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {WeatherService} from '../../weather.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-add-weather-card',
@@ -8,6 +9,7 @@ import {WeatherService} from '../../weather.service';
 })
 export class AddWeatherCardComponent implements OnInit {
   public city: string;
+  @Output() weatherCityAdded = new EventEmitter<string>();
 
   constructor(private weatherService: WeatherService) { }
 
@@ -15,7 +17,7 @@ export class AddWeatherCardComponent implements OnInit {
   }
 
   onAddCity() {
-    this.weatherService.find(this.city).subscribe();
+    this.weatherCityAdded.emit(this.city);
   }
 
 }

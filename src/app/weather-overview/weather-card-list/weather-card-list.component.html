@@ -1,4 +1,6 @@
 <ul>
-  <li #listContainer></li>
-  <li><app-add-weather-card></app-add-weather-card></li>
+  <li *ngFor="let weatherItem of weatherList">
+    <app-weather-card-item *ngIf="weatherItem" [weatherItem]="weatherItem"></app-weather-card-item>
+  </li>
+  <li><app-add-weather-card (weatherCityAdded)="onWeatherItemAdded($event)"></app-add-weather-card></li>
 </ul>

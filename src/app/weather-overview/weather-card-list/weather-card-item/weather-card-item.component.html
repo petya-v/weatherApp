@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col"></div>
       <div class="col">
-        <app-weather-card-image [weatherAnimation]="weatherItem.weather"></app-weather-card-image>
+        <app-weather-card-image *ngIf="weatherItem" [weather]="weatherItem.weather"></app-weather-card-image>
       </div>
       <div class="col"></div>
     </div>
