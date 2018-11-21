@@ -1,4 +1,4 @@
-<div class="icon sun-shower" *ngIf="weatherCondition == 'Sun-shower'">
+<div class="icon sun-shower" *ngIf="weather == 'Rain'">
   <div class="cloud"></div>
   <div class="sun">
     <div class="rays"></div>
@@ -6,7 +6,7 @@
   <div class="rain"></div>
 </div>
 
-<div class="icon thunder-storm" *ngIf="weatherCondition == 'Storm'">
+<div class="icon thunder-storm" *ngIf="weather == 'Thunderstorm'">
   <div class="cloud"></div>
   <div class="lightning">
     <div class="bolt"></div>
@@ -14,12 +14,13 @@
   </div>
 </div>
 
-<div class="icon cloudy" *ngIf="weatherCondition == 'Clouds' || weatherCondition == 'Scattered'">
+<div class="icon cloudy" *ngIf="weather == 'Clouds' || weather == 'Scattered'
+                                || weather == 'Broken' || weather == 'Mist'">
   <div class="cloud"></div>
   <div class="cloud"></div>
 </div>
 
-<div class="icon flurries" *ngIf="weatherCondition == 'Snow'">
+<div class="icon flurries" *ngIf="weather == 'Snow'">
   <div class="cloud"></div>
   <div class="snow">
     <div class="flake"></div>
@@ -27,13 +28,13 @@
   </div>
 </div>
 
-<div class="icon sunny" *ngIf="weatherCondition == 'Clear'">
+<div class="icon sunny" *ngIf="weather == 'Clear'">
   <div class="sun">
     <div class="rays"></div>
   </div>
 </div>
 
-<div class="icon rainy" *ngIf="weatherCondition == 'Rain'">
+<div class="icon rainy" *ngIf="weather == 'Shower' || weather == 'Drizzle'">
   <div class="cloud"></div>
   <div class="rain"></div>
 </div>

@@ -1,7 +1,5 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {WeatherService} from '../../../weather.service';
+import {Component, Input, OnInit} from '@angular/core';
 import {WeatherItem} from '../../../models/weather-item';
-import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-weather-card-item',
@@ -9,16 +7,12 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./weather-card-item.component.scss']
 })
 export class WeatherCardItemComponent implements OnInit {
-  // public weatherItem: WeatherItem;
   @Input() weatherItem: WeatherItem;
-  private subscriptions: Subscription = new Subscription();
   public currentDate = new Date();
 
-  constructor(private weatherService: WeatherService) { }
+  constructor() {
+  }
 
   ngOnInit() {
-    // this.subscriptions.add(this.weatherService.weather$.subscribe(
-    //   weatherItem => this.weatherItem = weatherItem
-    // ));
   }
 }

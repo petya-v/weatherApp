@@ -1,1 +1,5 @@
-@import "../../styles";
+@import "../shared-styles/shared";
+
+div.container-fluid {
+  background-color: $primary-color;
+}

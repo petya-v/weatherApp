@@ -1,13 +1,14 @@
-<div class="card border" >
-  <div class="card-body">
-    <div class="row"><div class="col"></div></div>
+<app-weather-card-wrapper>
+  <div class="col">
     <div class="row">
-      <input class="form-control-sm" type="text" placeholder="City" [(ngModel)]="city">
+      <span>{{ currentDate | date:'d'}} </span>
+      <span>{{ currentDate | date:'MMM'}}</span>
     </div>
-    <div class="row">
-      <div class="col">
-        <button (click)="onAddCity()"><span class="fas fa-plus-circle"></span></button>
-      </div>
+    <div class="row pt-4">
+      <input type="text" placeholder="City" [(ngModel)]="city">
+    </div>
+    <div class="row justify-content-center pt-4">
+      <button (click)="onAddCity()" class="btn btn-lg"><i class="fas fa-2x fa-plus-circle text-center"></i></button>
     </div>
   </div>
-</div>
+</app-weather-card-wrapper>

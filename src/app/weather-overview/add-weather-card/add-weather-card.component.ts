@@ -8,6 +8,7 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./add-weather-card.component.scss']
 })
 export class AddWeatherCardComponent implements OnInit {
+  public currentDate = new Date();
   public city: string;
   @Output() weatherCityAdded = new EventEmitter<string>();
 
@@ -18,6 +19,7 @@ export class AddWeatherCardComponent implements OnInit {
 
   onAddCity() {
     this.weatherCityAdded.emit(this.city);
+    this.city = null;
   }
 
 }

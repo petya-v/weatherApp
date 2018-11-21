@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("~bootstrap/dist/css/bootstrap.css");
 @import "~@fortawesome/fontawesome-free/css/all.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import '~ngx-toastr/toastr.css';
 
 $primary-color: #212529;
 
 * {
-  background-color: $primary-color;
+  font-family: 'Roboto', sans-serif;
 }

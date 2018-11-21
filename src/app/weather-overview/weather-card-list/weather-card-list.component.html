@@ -1,6 +1,8 @@
-<ul>
-  <li *ngFor="let weatherItem of weatherList">
-    <app-weather-card-item *ngIf="weatherItem" [weatherItem]="weatherItem"></app-weather-card-item>
-  </li>
-  <li><app-add-weather-card (weatherCityAdded)="onWeatherItemAdded($event)"></app-add-weather-card></li>
-</ul>
+<div class="card-deck-wrapper">
+  <div class="card-deck">
+    <app-weather-card-item *ngFor="let weatherItem of weatherList"
+                           [weatherItem]="weatherItem">
+    </app-weather-card-item>
+    <app-add-weather-card (weatherCityAdded)="onWeatherItemAdded($event)"></app-add-weather-card>
+  </div>
+</div>

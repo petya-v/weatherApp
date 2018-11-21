@@ -12,6 +12,9 @@ import { WeatherCardImageComponent } from './weather-overview/weather-card-list/
 import {WeatherService} from './weather.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import {ToastrModule} from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { WeatherCardWrapperComponent } from './weather-overview/weather-card-wrapper/weather-card-wrapper.component';
 
 const routes: Routes = [
   { path: '', component: WeatherOverviewComponent }
@@ -25,13 +28,16 @@ const routes: Routes = [
     WeatherCardItemComponent,
     AddWeatherCardComponent,
     WeatherCardImageComponent,
+    WeatherCardWrapperComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [
     WeatherService

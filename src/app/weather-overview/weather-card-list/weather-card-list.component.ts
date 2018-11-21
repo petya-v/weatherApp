@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import {WeatherService} from '../../weather.service';
 import {WeatherItem} from '../../models/weather-item';
+import {ToastrService} from 'ngx-toastr';
 
 
 @Component({
@@ -11,16 +12,23 @@ import {WeatherItem} from '../../models/weather-item';
 export class WeatherCardListComponent implements OnInit {
   private weatherList: Array<WeatherItem> = [];
 
-  constructor(private weatherService: WeatherService) { }
+  constructor(private weatherService: WeatherService,
+              public toastr: ToastrService) {
+  }
 
   ngOnInit() {
+    this.weatherService.weather$
+      .subscribe(weatherItem => {
+        this.weatherList = [...this.weatherList, weatherItem];
+      });
+
+    this.weatherService.weatherErr$.subscribe(err => {
+      this.toastr.error(err.message);
+    });
   }
 
   onWeatherItemAdded(cityName: string) {
-    const weatherList: Array<WeatherItem> = [];
-    this.weatherService.find(cityName).subscribe(weatherItem => {
-      weatherList.push(weatherItem);
-      this.weatherList = [...weatherList];
-    });
+    this.weatherService.find(cityName);
   }
 }
+

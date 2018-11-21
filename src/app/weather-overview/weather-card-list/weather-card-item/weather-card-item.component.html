@@ -1,27 +1,35 @@
-<div class="card border" >
-  <div class="card-body">
+<app-weather-card-wrapper>
     <div class="row">
       <div class="col">
         <span>{{ currentDate | date:'d'}} </span>
         <span>{{ currentDate | date:'MMM'}}</span>
       </div>
       <div class="col"></div>
-      <div class="col"></div>
+      <div class="col">
+        <span>
+          <h5>{{weatherItem?.name}}</h5>
+        </span>
+      </div>
     </div>
+
+    <div  *ngFor="let weather of weatherItem.weather | slice: 0 : 1">
     <div class="row">
       <div class="col"></div>
       <div class="col">
-        <app-weather-card-image *ngIf="weatherItem" [weather]="weatherItem.weather"></app-weather-card-image>
+        <app-weather-card-image [weather]="weather.main"></app-weather-card-image>
       </div>
       <div class="col"></div>
     </div>
+
     <div class="row">
       <div class="col"></div>
-      <div class="col">
-        <span><h5 class="card-title text-center">{{weatherItem?.name}}</h5></span>
+      <div class="col text-center">
+        <span>{{weather.main}}</span>
       </div>
       <div class="col"></div>
     </div>
+    </div>
+
     <div class="row pt-3">
       <div class="col text-center">
         <span class="fas fa-wind"></span>
@@ -36,5 +44,4 @@
         <span>  {{weatherItem?.main.temp}}</span>
       </div>
     </div>
-  </div>
-</div>
+</app-weather-card-wrapper>

@@ -1,9 +1,19 @@
-@import "../../../styles";
+@import "../../shared-styles/shared";
 
-span {
+i, span {
   color: white;
 }
 
 input {
   color: white;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  text-align: center;
+  width: 100%;
+  font-size: 30px;
+}
+
+button {
+  background-color: transparent;
 }

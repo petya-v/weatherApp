@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Weather} from '../../../../models/weather-item';
-import {debug} from 'util';
 
 @Component({
   selector: 'app-weather-card-image',
@@ -8,14 +7,11 @@ import {debug} from 'util';
   styleUrls: ['./weather-card-image.component.scss']
 })
 export class WeatherCardImageComponent implements OnInit {
-  @Input() weather: Weather;
-  private weatherCondition: string;
+  @Input() weather: string;
 
   constructor() { }
 
   ngOnInit() {
-    this.weatherCondition = this.weather[0].main;
-    debugger;
   }
 
 }
