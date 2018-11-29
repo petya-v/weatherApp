@@ -1,0 +1,16 @@
+@import "../../shared-styles/shared";
+
+
+:host {
+  margin-bottom: 30px;
+  display: block;
+  background-color: $primary-color;
+}
+
+div.card-body{
+  background-color: $primary-color;
+  max-width: 296px;
+  min-height: 311px;
+  width: 100%;
+  border: 2px solid white;
+}
