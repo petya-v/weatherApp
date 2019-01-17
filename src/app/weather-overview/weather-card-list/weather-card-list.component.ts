@@ -2,6 +2,7 @@ import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import {WeatherService} from '../../weather.service';
 import {WeatherItem} from '../../models/weather-item';
 import {ToastrService} from 'ngx-toastr';
+import {BehaviorSubject} from 'rxjs';
 
 
 @Component({
@@ -11,6 +12,7 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class WeatherCardListComponent implements OnInit {
   private weatherList: Array<WeatherItem> = [];
+  weatherList$ = new BehaviorSubject<WeatherItem[]>(null);
 
   constructor(private weatherService: WeatherService,
               public toastr: ToastrService) {
@@ -20,6 +22,7 @@ export class WeatherCardListComponent implements OnInit {
     this.weatherService.weather$
       .subscribe(weatherItem => {
         this.weatherList = [...this.weatherList, weatherItem];
+        this.weatherList$.next(this.weatherList);
       });
 
     this.weatherService.weatherErr$.subscribe(err => {

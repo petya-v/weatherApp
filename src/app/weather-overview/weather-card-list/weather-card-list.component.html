@@ -1,6 +1,6 @@
 <div class="card-deck-wrapper">
   <div class="card-deck">
-    <app-weather-card-item *ngFor="let weatherItem of weatherList"
+    <app-weather-card-item *ngFor="let weatherItem of (weatherList$ | async)"
                            [weatherItem]="weatherItem">
     </app-weather-card-item>
     <app-add-weather-card (weatherCityAdded)="onWeatherItemAdded($event)"></app-add-weather-card>
