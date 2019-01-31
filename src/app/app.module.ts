@@ -9,11 +9,11 @@ import { WeatherCardListComponent } from './weather-overview/weather-card-list/w
 import { WeatherCardItemComponent } from './weather-overview/weather-card-list/weather-card-item/weather-card-item.component';
 import { AddWeatherCardComponent } from './weather-overview/add-weather-card/add-weather-card.component';
 import { WeatherCardImageComponent } from './weather-overview/weather-card-list/weather-card-item/weather-card-image/weather-card-image.component';
-import {WeatherService} from './weather.service';
-import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
-import {ToastrModule} from 'ngx-toastr';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { WeatherService } from './weather.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WeatherCardWrapperComponent } from './weather-overview/weather-card-wrapper/weather-card-wrapper.component';
 
 const routes: Routes = [
